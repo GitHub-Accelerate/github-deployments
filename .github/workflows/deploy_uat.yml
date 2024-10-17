@@ -1,10 +1,10 @@
-name: Deployment (DEV)
+name: Deployment (UAT)
 
 # Will deploy when the developer is pushing
 
 concurrency:
-  group: DEV
-  cancel-in-progress: true
+  group: UAT
+  cancel-in-progress: false
 
 
 on:
@@ -20,9 +20,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: DEV
+    environment: UAT
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-    - name: Deploy (DEV)
-      run: echo "Deploying to DEV"
+    - name: Deploy (UAT)
+      run: echo "Deploying to UAT"
